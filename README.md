@@ -2,11 +2,11 @@
 一个基于react的新闻网站，可以自适应PC和移动端，登录后有评论和收藏功能。
 
 # DEMO
-[![https://github.com/pengxiaohua/news-responsive-by-react/blob/master/demo1.png]]
-[![https://github.com/pengxiaohua/news-responsive-by-react/blob/master/demo2.png]]
+![image](https://github.com/pengxiaohua/news-responsive-by-react/blob/master/demo1.png)
+![iamge](https://github.com/pengxiaohua/news-responsive-by-react/blob/master/demo2.png)
 
 # 安装
-#### 安装node——modules
+#### 安装node_modules
 ```shell
 npm install 
 ```
