@@ -28,5 +28,6 @@ npm install webpack-dev-server --save
 
 # 跑起来
 ```shell
-webpack-dev-server --inline --hot
+npm run dev
 ```
+打开浏览器输入：localhost:8080
