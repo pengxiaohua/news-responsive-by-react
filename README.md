@@ -11,19 +11,7 @@
 # 安装
 #### 安装node_modules
 ```shell
-npm install 
-```
-#### 安装实时加载工具
-##### 全局安装：
-```shell
-npm install -g webpack
-npm install -g webpack-dev-server
-```
-
-##### 当前项目安装：
-```shell
-npm install webpack --save
-npm install webpack-dev-server --save
+npm install  or cnpm install or yarn install
 ```
 
 # 跑起来
