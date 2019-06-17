@@ -28,7 +28,7 @@
     "react-touch-loader": "^1.1.0",
     "style-loader": "^0.13.1",
     "webpack": "^3.0.0",
-    "webpack-dev-server": "^1.16.5"
+    "webpack-dev-server": "^3.1.11"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.0.1",
