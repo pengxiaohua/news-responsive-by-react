@@ -2,9 +2,9 @@ import React from 'react';
 import MobileHeader from './mobile_header';
 import MobileFooter from './mobile_footer';
 import { Tabs, Carousel } from 'antd';
-const TabPane = Tabs.TabPane;
 import MobileList from './mobile_list';
 import MobileListPullRefresh from './mobilelist_pull_refresh.js';
+const TabPane = Tabs.TabPane;
 
 export default class MobileIndex extends React.Component {
     render() {

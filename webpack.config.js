@@ -1,11 +1,12 @@
-var debug = process.env.NODE_ENV !== "production";
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
-  context: path.join(__dirname),
-  devtool: debug ? "inline-sourcemap" : null,
   entry: "./src/js/root.js",
+  output: {
+    path: __dirname,
+    filename: "./src/bundle.js"
+  },
   module: {
     loaders: [
       {
@@ -21,16 +22,14 @@ module.exports = {
       { test: /\.css$/, loader: 'style-loader!css-loader' },
 
       {
-        test:/\.less/,
-        loader:"style-loader!css-loader!less-loader"
+        test: /\.less/,
+        loader: "style-loader!css-loader!less-loader"
       }
     ]
   },
-  output: {
-    path: __dirname,
-    filename: "./src/bundle.js"
-  },
-  plugins: debug ? [] : [
+  context: path.join(__dirname),
+  devtool: process.env.NODE_ENV !== "production" ? "inline-sourcemap" : null,
+  plugins: process.env.NODE_ENV !== "production" ? [] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),

@@ -1,18 +1,17 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import { Card } from 'antd';
 import Tloader from 'react-touch-loader';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Link } from 'react-router';
 
 export default class MobileList extends React.Component {
     constructor() {
         super();
         this.state = {
             news: '',
-            count:5,
-            hasMore:0,
-            initializing:1,
-            refreshedAt:Date.now(),
+            count: 5,
+            hasMore: 0,
+            initializing: 1,
+            refreshedAt: Date.now(),
         };
     }
 
@@ -26,41 +25,41 @@ export default class MobileList extends React.Component {
             .then(json => this.setState({ news: json }));
     };
 
-    loaderMore(resolve){
-        setTimeout(()=>{
+    loaderMore(resolve) {
+        setTimeout(() => {
             var count = this.state.count;
             this.setState({
-                count:count+5,
+                count: count + 5,
             });
 
             var myFetchOptions = {
-            method: 'GET'
-        };
-        
-        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=" + this.props.type
-            + "&count=" + this.state.count, myFetchOptions)
-            .then(response => response.json())
-            .then(json => this.setState({ news: json }));
+                method: 'GET'
+            };
+
+            fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=" + this.props.type
+                + "&count=" + this.state.count, myFetchOptions)
+                .then(response => response.json())
+                .then(json => this.setState({ news: json }));
 
             this.setState({
-                hasMore:count>0 && count<50,
+                hasMore: count > 0 && count < 50,
             })
             resolve();
 
-        },300);
+        }, 300);
     };
 
-    componentDidMount(){
-        setTimeout(()=>{
+    componentDidMount() {
+        setTimeout(() => {
             this.setState({
-                hasMore:1,
-                initializing:2       //所有的组件初始化完成
+                hasMore: 1,
+                initializing: 2       //所有的组件初始化完成
             })
-        },300)
+        }, 300)
     }
 
     render() {
-        var {hasMore,initializing,refreshedAt} = this.state;
+        var { hasMore, initializing, refreshedAt } = this.state;
         const { news } = this.state;
         const newsList = news.length
             ?
@@ -91,9 +90,9 @@ export default class MobileList extends React.Component {
             <div>
                 <Row>
                     <Col span={24}>
-                        <Tloader className="main" onLoadMore={this.loaderMore.bind(this)} 
-                        hasMore={hasMore}
-                        initializing={initializing}>
+                        <Tloader className="main" onLoadMore={this.loaderMore.bind(this)}
+                            hasMore={hasMore}
+                            initializing={initializing}>
                             {newsList}
                         </Tloader>
                     </Col>
