@@ -16,11 +16,11 @@ export default class MobileNewsDetails extends React.Component {
             method: 'GET'
         };
         fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getnewsitem&uniquekey=" + this.props.params.uniquekey, myFetchOptions)
-        .then(response => response.json())
-        .then(json => {       //此时的json就是获取到的评论data
-            this.setState({ newsItem: json });
-            document.title = this.state.newsItem.title + " - React News | React 驱动的新闻平台";
-        })
+            .then(response => response.json())
+            .then(json => {       //此时的json就是获取到的评论data
+                this.setState({ newsItem: json });
+                document.title = this.state.newsItem.title + " - React News | React 驱动的新闻平台";
+            })
     };
     createMarkup() {
         return { __html: this.state.newsItem.pagecontent };
@@ -34,7 +34,7 @@ export default class MobileNewsDetails extends React.Component {
                     <Col span={24} className="container">
                         <div class="articleContainer" dangerouslySetInnerHTML={this.createMarkup()}></div>
                     </Col>
-                    <CommonComments uniquekey={this.props.params.uniquekey} /> 
+                    <CommonComments uniquekey={this.props.params.uniquekey} />
                 </Row>
                 <MobileFooter />
                 <BackTop />

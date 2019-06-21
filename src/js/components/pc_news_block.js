@@ -1,7 +1,6 @@
 import React from 'react';
-import { Row, Col } from 'antd';
 import { Card } from 'antd';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Link } from 'react-router';
 
 export default class PCNewsBlock extends React.Component {
     constructor() {
@@ -22,7 +21,7 @@ export default class PCNewsBlock extends React.Component {
     }
     render() {
         const { news } = this.state;
-            const newsList = news.length
+        const newsList = news.length
             ?
             news.map((newsItem, index) => (
                 <li key={index}>
@@ -35,15 +34,15 @@ export default class PCNewsBlock extends React.Component {
             '没有加载到任何新闻！';
 
         return (
-            
 
-        <div class="topNewsList">
-            <Card>
-                <ul>
-                    {newsList}
-                </ul>
-            </Card>
-        </div>
+
+            <div class="topNewsList">
+                <Card>
+                    <ul>
+                        {newsList}
+                    </ul>
+                </Card>
+            </div>
         );
     };
 }

@@ -1,25 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Row, Col, Modal , BackTop} from 'antd';
-import { Menu, Icon } from 'antd';
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
-import {
-    Tabs,
-    message,
-    Form,
-    Input,
-    Button,
-    Checkbox,
-    Card,
-    notification,
-    Upload
-} from 'antd';
-const FormItem = Form.Item;
-const TabPane = Tabs.TabPane;
-import { Router, Route, Link, browserHistory } from 'react-router'
+import { Row, Col, BackTop, Tabs, Card } from 'antd';
 import MobileHeader from './mobile_header';
 import MobileFooter from './mobile_footer';
+const TabPane = Tabs.TabPane;
 
 export default class MobileUserCenter extends React.Component {
 
